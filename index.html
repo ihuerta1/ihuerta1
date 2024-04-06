@@ -12,6 +12,20 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
+		<style>
+  .popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
 
 	</head>
 	<body class="is-preload">
@@ -27,8 +41,9 @@
 						<nav>
 							<ul>
 				
-							    <li><a href="#" class="icon brands fa-btc" title="ola ke ace?"><span class="label">BTC</span></a></li>
-								<li><a href="#" class="icon brands fa-linux"  title="Linux"><span class="label">Linux</span></a></li>
+                                <li><a href="#" class="icon brands fa-linux" id="linuxLink"><span class="label">Linux</span></a></li>
+							    <li><a href="#" class="icon brands fa-btc"  id="BitcoinLinK"><span class="label">BTC</span></a></li>
+					
 								<li><a href="https://www.linkedin.com/in/ignacio-huerta" class=" icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
 								<!--<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>-->
 								<!--<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>-->
@@ -50,5 +65,48 @@
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
+		
+		<div class="popup" id="popupMessage">
+        <font  color="black">
+        Información sobre Linux!
+        </font>
+        </div>
+
+<script>
+  // Obtener el enlace y el mensaje emergente
+  const linuxLink = document.getElementById('linuxLink');
+  const popupMessage = document.getElementById('popupMessage');
+
+  // Mostrar el mensaje emergente al hacer clic en el enlace
+  linuxLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar que se siga el enlace
+    popupMessage.style.display = 'block';
+    setTimeout(function() {
+      popupMessage.style.display = 'none';
+    }, 3000); // Ocultar el mensaje después de 3 segundos
+  });
+</script>
+
+		<div class="popup" id="popupMessage2">
+        <font  color="black">
+        Información sobre Bitcoin!
+        </font>
+        </div>
+
+<script>
+  // Obtener el enlace y el mensaje emergente
+  const BitcoinLinK = document.getElementById('BitcoinLinK');
+  const popupMessage2 = document.getElementById('popupMessage2');
+
+  // Mostrar el mensaje emergente al hacer clic en el enlace
+  BitcoinLinK.addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar que se siga el enlace
+    popupMessage2.style.display = 'block';
+    setTimeout(function() {
+      popupMessage2.style.display = 'none';
+    }, 3000); // Ocultar el mensaje después de 3 segundos
+  });
+</script>
+		
 	</body>
 </html>
